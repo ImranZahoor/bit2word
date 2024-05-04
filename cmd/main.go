@@ -1,17 +1,17 @@
 package main
 
 import (
-	"log/slog"
 	"net/http"
 
+	views "github.com/ImranZahoor/bit2word/views/home"
 	"github.com/go-chi/chi/v5"
 )
 
 func main() {
 	router := chi.NewMux()
+	home := views.Index("hi")
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		slog.Info("recieved request from ", "path:", r.URL.Path)
-		w.Write([]byte("welcome to website"))
+		home.Render(r.Context(), w)
 	})
 	http.ListenAndServe(":3000", router)
 }
