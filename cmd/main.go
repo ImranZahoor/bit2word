@@ -3,15 +3,24 @@ package main
 import (
 	"net/http"
 
-	views "github.com/ImranZahoor/bit2word/views/home"
+	views "github.com/ImranZahoor/bit2word/views/pages"
 	"github.com/go-chi/chi/v5"
 )
 
 func main() {
 	router := chi.NewMux()
-	home := views.Index("hi")
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		home.Render(r.Context(), w)
+		views.Home().Render(r.Context(), w)
 	})
+	router.Get("/services", func(w http.ResponseWriter, r *http.Request) {
+		views.Services().Render(r.Context(), w)
+	})
+	router.Get("/about-us", func(w http.ResponseWriter, r *http.Request) {
+		views.AboutUs().Render(r.Context(), w)
+	})
+	router.Get("/contact-us", func(w http.ResponseWriter, r *http.Request) {
+		views.ContactUs().Render(r.Context(), w)
+	})
+
 	http.ListenAndServe(":3000", router)
 }

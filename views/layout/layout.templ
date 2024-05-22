@@ -1,0 +1,15 @@
+package layout
+
+import "github.com/ImranZahoor/bit2word/views/components"
+
+templ Layout() {
+	<nav>
+		@components.Header()
+	</nav>
+	<h1 class="text-xl">
+		{ children... }
+	</h1>
+	<div>
+		@components.Footer()
+	</div>
+}
