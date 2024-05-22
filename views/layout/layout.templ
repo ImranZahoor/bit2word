@@ -3,13 +3,25 @@ package layout
 import "github.com/ImranZahoor/bit2word/views/components"
 
 templ Layout() {
-	<nav>
-		@components.Header()
-	</nav>
-	<h1 class="text-xl">
-		{ children... }
-	</h1>
-	<div>
-		@components.Footer()
-	</div>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Layout</title>
+  <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+</head>
+
+<body>
+  <nav class="bg-red-50">
+    @components.Header()
+  </nav>
+  <h1 class="text-xl">
+    { children... }
+  </h1>
+  <div>
+    @components.Footer()
+  </div>
+</body>
+
+</html>
 }

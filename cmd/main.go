@@ -9,6 +9,9 @@ import (
 
 func main() {
 	router := chi.NewMux()
+	fileServer := http.FileServer(http.Dir("./public"))
+	router.Handle("/public/*", http.StripPrefix("/public/", fileServer))
+
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		views.Home().Render(r.Context(), w)
 	})
