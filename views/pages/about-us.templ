@@ -3,9 +3,9 @@ package views
 import "github.com/ImranZahoor/bit2word/views/layout"
 
 templ AboutUs() {
-<div>
-  @layout.Layout() {
-  <h2>About Us</h2>
-  }
-</div>
+	<div>
+		@layout.Layout("About Us") {
+			<h2>About Us</h2>
+		}
+	</div>
 }

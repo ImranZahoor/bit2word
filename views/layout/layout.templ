@@ -2,26 +2,24 @@ package layout
 
 import "github.com/ImranZahoor/bit2word/views/components"
 
-templ Layout() {
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Layout</title>
-  <link rel="stylesheet" type="text/css" href="public/css/style.css" />
-</head>
-
-<body>
-  <nav class="bg-red-50">
-    @components.Header()
-  </nav>
-  <h1 class="text-xl">
-    { children... }
-  </h1>
-  <div>
-    @components.Footer()
-  </div>
-</body>
-
-</html>
+templ Layout(title string) {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>{ title }</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<link rel="stylesheet" type="text/css" href="public/css/style.css"/>
+		</head>
+		<body class="bg-[#1A2238] text-white">
+			<nav class="bg-red-50">
+				@components.Header()
+			</nav>
+			<h1 class="text-xl">
+				{ children... }
+			</h1>
+			<div>
+				@components.Footer()
+			</div>
+		</body>
+	</html>
 }

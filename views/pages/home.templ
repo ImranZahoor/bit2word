@@ -3,7 +3,85 @@ package views
 import "github.com/ImranZahoor/bit2word/views/layout"
 
 templ Home() {
-@layout.Layout() {
-<h1>Home</h1>
-}
+	@layout.Layout("Home") {
+		<main>
+			<section class="py-20">
+				<div class="container mx-auto flex justify-between items-center">
+					<div>
+						<h1 class="text-4xl font-bold mb-4">Welcome to Our Company</h1>
+						<p class="text-lg mb-8">We provide top-notch services to our clients.</p>
+						<button class="bg-[#FF6A3D] text-white px-6 py-3 rounded-md hover:bg-[#F4DB7D] hover:text-[#1A2238]">
+							Learn
+							More
+						</button>
+					</div>
+					<img src="https://via.placeholder.com/400x300" alt="Hero Image" class="rounded-lg shadow-lg"/>
+				</div>
+			</section>
+			<section class="bg-[#F4DB7D] text-[#1A2238] py-20">
+				<div class="container mx-auto">
+					<h2 class="text-3xl font-bold mb-8">Our Services</h2>
+					<div class="grid grid-cols-3 gap-8">
+						<div>
+							<h3 class="text-xl font-bold mb-4">Service 1</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-4">Service 2</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</div>
+						<div>
+							<h3 class="text-xl font-bold mb-4">Service 3</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="py-20">
+				<div class="container mx-auto">
+					<h2 class="text-3xl font-bold mb-8">About Us</h2>
+					<div class="grid grid-cols-2 gap-8">
+						<div>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus venenatis. Sed
+								tincidunt, risus in efficitur varius, justo est interdum arcu, vel maximus sapien
+								nisi in neque. Suspendisse potenti.
+							</p>
+						</div>
+						<div>
+							<p>
+								Fusce infelis eu tortor hendrerit finibus. Mauris consequat ornare feugiat. Mauris et magna in metus
+								blandit efficitur vel non sem. Integer finibus efficitur blandit.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="bg-[#FF6A3D] text-white py-20">
+				<div class="container mx-auto">
+					<h2 class="text-3xl font-bold mb-8">Contact Us</h2>
+					<form>
+						<div class="mb-4">
+							<label for="name" class="block mb-2">Name</label>
+							<input type="text" id="name" class="bg-white text-[#1A2238] px-4 py-2 rounded-md w-full" required/>
+						</div>
+						<div class="mb-4">
+							<label for="email" class="block mb-2">Email</label>
+							<input type="email" id="email" class="bg-white text-[#1A2238] px-4 py-2 rounded-md w-full" required/>
+						</div>
+						<div class="mb-4">
+							<label for="message" class="block mb-2">Message</label>
+							<textarea
+								id="message"
+								rows="4"
+								class="bg-white text-[#1A2238] px-4 py-2 rounded-md w-full"
+								required
+							></textarea>
+						</div>
+						<button type="submit" class="bg-[#1A2238] text-white px-6 py-3 rounded-md hover:bg-[#9DAAF2]">Submit</button>
+					</form>
+				</div>
+			</section>
+		</main>
+	}
 }
